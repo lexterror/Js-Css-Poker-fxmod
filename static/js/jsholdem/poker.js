@@ -195,6 +195,7 @@ for (var x = 0; x < 20; x++)
  // gui_log_to_history(gamenumber); 
   initialize_game();
   ask_how_many_opponents();
+  checktable();
 
 
 }
@@ -342,6 +343,7 @@ for (var x = 0; x < 20; x++)
   gui_hide_guick_raise();
   shuffle();
   blinds_and_deal();
+  checktable();
 }
 
 function collect_cards () {
@@ -2490,7 +2492,9 @@ function change_name () {
 
 function help_func () {
   // Open help.html
-  window.location.href = 'cheatsheet.html';
+  var url = 'cheatsheet.html';
+  var win = window.open(url, '_blank');
+  win.focus();
 }
 
 function update_func () {
