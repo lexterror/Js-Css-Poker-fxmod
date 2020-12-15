@@ -73,7 +73,7 @@ body, html {
 }
 #cheatsheet {
     top: 520px;
-    width: 300px;
+    width: 338px;
     height: 127px;
     background-image: url(static/images/carbon.png);
     background-repeat: repeat;
@@ -127,7 +127,7 @@ progress[value]::-webkit-progress-value {
 }
 </style>
 
-<body onload="parent.init()">
+<body onload="parent.init(), checktable(), prechecksound()">
 
 <div style="z-index:9999999;width:100%;height:24px;position:fixed;background: #000;bottom:0;margin: 0 auto;">
 <progress id="myprogress" max="100" value="0" style="top:5px;left:0;right:0;width:650px;height:14px;z-index:9999999;margin:0 auto;position:absolute;"></progress>
@@ -539,8 +539,9 @@ function display_allbot8pokerchips() {
               </select>
            </div>
         </div>
-        <div id="help-button" class="setup-button">help</div>
+        <div id="felt-button" class="setup-button" onclick="changetable();">table</div>
         <div id="check-button" class="setup-button">update</div>
+        <div id="help-button" class="setup-button">help</div>
         <div id="mode-button" class="setup-button" style="">theme</div>
         <div id="" class="setup-button">anchor<input type="checkbox" id="lock" name="lock" checked onchange="lock()"></div>
         <div id="" class="setup-button">sound<input type="checkbox" id="sound" name="sound" checked onchange="checksound()"></div>
@@ -566,17 +567,23 @@ function display_allbot8pokerchips() {
   <source src="casino.ogg" type="audio/ogg">
 </audio>
 
-<script>
-var once = 0;
+<script> // cliker
+var clickonce = 0;
+
 window.addEventListener( 'click', () => {
-if (once == 0)
+var soundstatus = getLocalStorage("soundstatus");
+if (soundstatus === null) {  // first time
+     soundz = 0;
+  }
+  else soundz = soundstatus;
+if (soundz == 0 && clickonce == 0)
 {
 var audio = document.getElementById("casino");
  audio.src = 'casino.ogg';
  audio.load();
  audio.play();
 }
-once = 1;
+clickonce = 1;
 });
 </script>
    <style>
@@ -678,25 +685,46 @@ function lock() {
 }
 </script>
 <script>
-        function createCookie(cookieName,cookieValue,daysToExpire)
-        {
-          var date = new Date();
-          date.setTime(date.getTime()+(daysToExpire*24*60*60*1000));
-          document.cookie = cookieName + "=" + cookieValue + "; expires=" + date.toGMTString();
-        }
-		function accessCookie(cookieName)
-        {
-          var name = cookieName + "=";
-          var allCookieArray = document.cookie.split(';');
-          for(var i=0; i<allCookieArray.length; i++)
-          {
-            var temp = allCookieArray[i].trim();
-            if (temp.indexOf(name)==0)
-            return temp.substring(name.length,temp.length);
-       	  }
-        	return "";
-        }
 
+var soundz = 0;
+        
+function prechecksound ()
+{
+var soundstatus = getLocalStorage("soundstatus");
+  if (soundstatus === null) {  // first time
+     soundz = 0;
+  }
+  else soundz = soundstatus;
+
+if (soundz == 0)
+{
+ document.getElementById("sound").checked = true;
+ audio1 = new Audio('sounds/winner.wav');
+ audio2 = new Audio('sounds/allin.wav');
+ audio3 = new Audio('sounds/fold.wav');
+ audio4 = new Audio('sounds/raise.wav'); 
+ audio5 = new Audio('sounds/chips.wav');
+ audio6 = new Audio('sounds/chipsmed.wav');
+ var audio = document.getElementById("casino");
+ audio.src = 'casino.ogg';
+ audio.load();
+ audio.play();
+}
+
+if (soundz == 1)
+{
+ document.getElementById("sound").checked = false;
+audio1 = new Audio('');
+audio2 = new Audio('');
+audio3 = new Audio('');
+audio4 = new Audio(''); 
+audio5 = new Audio('');
+audio6 = new Audio('');
+ document.getElementById("casino").src = "";
+}
+
+}
+        
 function checksound() {
     var j = document.getElementById("sound");
     if (j.checked == true)
@@ -707,11 +735,12 @@ function checksound() {
  audio3 = new Audio('sounds/fold.wav');
  audio4 = new Audio('sounds/raise.wav'); 
  audio5 = new Audio('sounds/chips.wav');
- audio6 = new Audio('sounds/chipslight.wav');
+ audio6 = new Audio('sounds/chipsmed.wav');
  var audio = document.getElementById("casino")
  audio.src = 'casino.ogg';
  audio.load();
  audio.play();
+ setLocalStorage("soundstatus", 0);
     }
     if (j.checked == false)
     {
@@ -723,6 +752,7 @@ audio4 = new Audio('');
 audio5 = new Audio('');
 audio6 = new Audio('');
  document.getElementById("casino").src = "";
+  setLocalStorage("soundstatus", 1);
     }
     
 }
@@ -732,5 +762,63 @@ audio6 = new Audio('');
 
 
 </script>
+<script>
+var currenttable = 0;
 
+function checktable() {
+
+var feltcolor = getLocalStorage("currenttable");
+  if (feltcolor === null) {  // first time
+     currenttable = 0;
+  }
+  else currenttable = feltcolor;
+
+if (currenttable == 0)
+{
+document.getElementById("poker_table").style.backgroundImage = "url('static/images/poker_table.png')";
+}
+if (currenttable == 1)
+{
+document.getElementById("poker_table").style.backgroundImage = "url('static/images/poker_table_red.png')";
+}
+if (currenttable == 2)
+{
+document.getElementById("poker_table").style.backgroundImage = "url('static/images/poker_table_blue.png')";
+}
+if (currenttable == 3)
+{
+document.getElementById("poker_table").style.backgroundImage = "url('static/images/poker_table_black.png')";
+}
+}
+
+function changetable() {
+
+var feltcolor = getLocalStorage("currenttable");
+  if (feltcolor === null) {  // first time
+     currenttable = 0;
+  }
+  else currenttable = feltcolor;
+
+if (currenttable == 0)
+{
+document.getElementById("poker_table").style.backgroundImage = "url('static/images/poker_table_red.png')";
+}
+if (currenttable == 1)
+{
+document.getElementById("poker_table").style.backgroundImage = "url('static/images/poker_table_blue.png')";
+}
+if (currenttable == 2)
+{
+document.getElementById("poker_table").style.backgroundImage = "url('static/images/poker_table_black.png')";
+}
+if (currenttable == 3)
+{
+document.getElementById("poker_table").style.backgroundImage = "url('static/images/poker_table.png')";
+}
+currenttable++;
+if (currenttable == 4)
+currenttable = 0;
+setLocalStorage("currenttable", currenttable);
+}
+</script>
 </html>
