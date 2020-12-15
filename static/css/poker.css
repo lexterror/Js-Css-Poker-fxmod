@@ -371,7 +371,7 @@ html {
 #action-options {
     height: 20px;
     position: absolute;
-    width: 300px;
+    width: 336px;
     margin: 0 auto;
     font-family: western !important;
     
@@ -393,7 +393,7 @@ html {
 }
 
 #setup-options {
-    width: 298px;
+    width: 336px;
     height: 32px;
     bottom: 0;
     left: 0;
@@ -524,17 +524,17 @@ select {
 
     font-size: 12px;
     line-height: 12px;
-    height: 30px;
+    height: 36px;
     position: absolute;
     text-align: center;
-    width: 300px;
+    width: 336px;
     margin-top: 55px;
 }
 #quick-raises a:link {
     color: white;
     text-shadow: 0 0 2px #000000;
     text-decoration: none;
-    padding: 5px;
+    padding: 3px;
     margin: 2px !important;
     border-radius: 2px;
 }
