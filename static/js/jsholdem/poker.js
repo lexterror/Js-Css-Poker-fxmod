@@ -3,6 +3,10 @@ If you improve this software or find a bug, please let me know: orciu@users.sour
 Project home page: http://sourceforge.net/projects/jsholdem/
 */
 "use strict";
+
+//speed pitch/tempo/speed
+//1.103
+//10.290
 var audio1 = new Audio('sounds/winner.wav');
 var audio2 = new Audio('sounds/allin.wav');
 var audio3 = new Audio('sounds/fold.wav');
@@ -601,7 +605,7 @@ function main () {
         
             //chipsmarkers
           
-            audio4.play();
+         
         
       }
       var quick_bets = "";
@@ -977,6 +981,7 @@ function the_bet_function (player_index, bet_amount) {
     return 0;
     // FOLD ;
   } else if (bet_amount >= players[player_index].bankroll) { // ALL IN
+    audio2.play();
     bet_amount = players[player_index].bankroll;
 
     var old_current_bet = current_bet_amount;
@@ -2056,45 +2061,114 @@ function bet_from_bot (x) {
     b = 0;
     players[x].status = "FOLD";
                if (x == 0)
+               {
                document.getElementById("mybet").style.background = "black";
+               }
                if (x == 1)
+               {
+               
                document.getElementById("bbet1").style.background = "black";
+               $("#botspeech1").text("I fold...");
+               $("#botspeech1").show().delay(5000).fadeOut();
+               }
                if (x == 2)
+               {
+               $("#botspeech2").text("I fold...");
+               $("#botspeech2").show().delay(5000).fadeOut();
                document.getElementById("bbet2").style.background = "black";
+               }
                if (x == 3)
+               {
+               $("#botspeech3").text("I fold...");
+               $("#botspeech3").show().delay(5000).fadeOut();
                document.getElementById("bbet3").style.background = "black";
+               }
                if (x == 4)
+               {
+               $("#botspeech4").text("I fold...");
+               $("#botspeech4").show().delay(5000).fadeOut();
                document.getElementById("bbet4").style.background = "black";
+               }
                if (x == 5)
+               {
+               $("#botspeech5").text("I fold...");
+               $("#botspeech5").show().delay(5000).fadeOut();
                document.getElementById("bbet5").style.background = "black";
+               }
                if (x == 6)
+               {
+               $("#botspeech6").text("I fold...");
+               $("#botspeech6").show().delay(5000).fadeOut();
                document.getElementById("bbet6").style.background = "black";
+               }
                if (x == 7)
+               {
+               $("#botspeech7").text("I fold...");
+               $("#botspeech7").show().delay(5000).fadeOut();
                document.getElementById("bbet7").style.background = "black";
+               }
                if (x == 8)
-               document.getElementById("bbet8").style.background = "black"; 
+               {
+               $("#botspeech8").text("I fold...");
+               $("#botspeech8").show().delay(5000).fadeOut();
+               document.getElementById("bbet8").style.background = "black";
+               } 
                if (x == 9)
                document.getElementById("bbet9").style.background = "black";
   } else if (b == n) { // CALL
     players[x].status = "CALL";
                if (x == 0)
+               {
                document.getElementById("mybet").style.background = "lawngreen";
+               }
                if (x == 1)
+               {
+               $("#botspeech1").text("I call...");
+               $("#botspeech1").show().delay(5000).fadeOut();
                document.getElementById("bbet1").style.background = "lawngreen";
+               }
                if (x == 2)
+               {
+               $("#botspeech2").text("I call...");
+               $("#botspeech2").show().delay(5000).fadeOut();
                document.getElementById("bbet2").style.background = "lawngreen";
+               }
                if (x == 3)
+               {
+               $("#botspeech3").text("I call...");
+               $("#botspeech3").show().delay(5000).fadeOut();
                document.getElementById("bbet3").style.background = "lawngreen";
+               }
                if (x == 4)
+               {
+               $("#botspeech4").text("I call...");
+               $("#botspeech4").show().delay(5000).fadeOut();
                document.getElementById("bbet4").style.background = "lawngreen";
+               }
                if (x == 5)
+               {
+               $("#botspeech5").text("I call...");
+               $("#botspeech5").show().delay(5000).fadeOut();
                document.getElementById("bbet5").style.background = "lawngreen";
+               }
                if (x == 6)
+               {
+               $("#botspeech6").text("I call...");
+               $("#botspeech6").show().delay(5000).fadeOut();
                document.getElementById("bbet6").style.background = "lawngreen";
+               }
                if (x == 7)
+               {
+               $("#botspeech7").text("I call...");
+               $("#botspeech7").show().delay(5000).fadeOut();
                document.getElementById("bbet7").style.background = "lawngreen";
+               }
                if (x == 8)
+               {
+               $("#botspeech8").text("I call...");
+               $("#botspeech8").show().delay(5000).fadeOut();
                document.getElementById("bbet8").style.background = "lawngreen"; 
+               }
                if (x == 9)
                document.getElementById("bbet9").style.background = "lawngreen";
   } else if (b > n) {
@@ -2102,28 +2176,116 @@ function bet_from_bot (x) {
       b = n;
       players[x].status = "CALL";
                if (x == 0)
+               {
                document.getElementById("mybet").style.background = "lawngreen";
+               }
                if (x == 1)
+               {
+               $("#botspeech1").text("I call...");
+               $("#botspeech1").show().delay(5000).fadeOut();
                document.getElementById("bbet1").style.background = "lawngreen";
+               }
                if (x == 2)
+               {
+               $("#botspeech2").text("I call...");
+               $("#botspeech2").show().delay(5000).fadeOut();
                document.getElementById("bbet2").style.background = "lawngreen";
+               }
                if (x == 3)
+               {
+               $("#botspeech3").text("I call...");
+               $("#botspeech3").show().delay(5000).fadeOut();
                document.getElementById("bbet3").style.background = "lawngreen";
+               }
                if (x == 4)
+               {
+               $("#botspeech4").text("I call...");
+               $("#botspeech4").show().delay(5000).fadeOut();
                document.getElementById("bbet4").style.background = "lawngreen";
+               }
                if (x == 5)
+               {
+               $("#botspeech5").text("I call...");
+               $("#botspeech5").show().delay(5000).fadeOut();
                document.getElementById("bbet5").style.background = "lawngreen";
+               }
                if (x == 6)
+               {
+               $("#botspeech6").text("I call...");
+               $("#botspeech6").show().delay(5000).fadeOut();
                document.getElementById("bbet6").style.background = "lawngreen";
+               }
                if (x == 7)
+               {
+               $("#botspeech7").text("I call...");
+               $("#botspeech7").show().delay(5000).fadeOut();
                document.getElementById("bbet7").style.background = "lawngreen";
+               }
                if (x == 8)
+               {
+               $("#botspeech8").text("I call...");
+               $("#botspeech8").show().delay(5000).fadeOut();
                document.getElementById("bbet8").style.background = "lawngreen"; 
+               }
                if (x == 9)
                document.getElementById("bbet9").style.background = "lawngreen";
     } else {
       players[x].status = ""; // RAISE
-       
+         audio4.play();
+               if (x == 0)
+               {
+               document.getElementById("mybet").style.background = "lawngreen";
+               }
+               if (x == 1)
+               {
+               $("#botspeech1").text("I raise...");
+               $("#botspeech1").show().delay(5000).fadeOut();
+               document.getElementById("bbet1").style.background = "lawngreen";
+               }
+               if (x == 2)
+               {
+               $("#botspeech2").text("I raise...");
+               $("#botspeech2").show().delay(5000).fadeOut();
+               document.getElementById("bbet2").style.background = "lawngreen";
+               }
+               if (x == 3)
+               {
+               $("#botspeech3").text("I raise...");
+               $("#botspeech3").show().delay(5000).fadeOut();
+               document.getElementById("bbet3").style.background = "lawngreen";
+               }
+               if (x == 4)
+               {
+               $("#botspeech4").text("I raise...");
+               $("#botspeech4").show().delay(5000).fadeOut();
+               document.getElementById("bbet4").style.background = "lawngreen";
+               }
+               if (x == 5)
+               {
+               $("#botspeech5").text("I raise...");
+               $("#botspeech5").show().delay(5000).fadeOut();
+               document.getElementById("bbet5").style.background = "lawngreen";
+               }
+               if (x == 6)
+               {
+               $("#botspeech6").text("I raise...");
+               $("#botspeech6").show().delay(5000).fadeOut();
+               document.getElementById("bbet6").style.background = "lawngreen";
+               }
+               if (x == 7)
+               {
+               $("#botspeech7").text("I raise...");
+               $("#botspeech7").show().delay(5000).fadeOut();
+               document.getElementById("bbet7").style.background = "lawngreen";
+               }
+               if (x == 8)
+               {
+               $("#botspeech8").text("I raise...");
+               $("#botspeech8").show().delay(5000).fadeOut();
+               document.getElementById("bbet8").style.background = "lawngreen"; 
+               }
+               if (x == 9)
+               document.getElementById("bbet9").style.background = "lawngreen";       
     }
   }
   if (the_bet_function(x, b) == 0) {
@@ -2234,35 +2396,69 @@ function write_player (n, hilite, show_cards) {
     }
   } else if (!has_money(n)) {
         
-    audio2.play();
+   // audio2.play();
     bet_text = "ALL IN (" +
 
                (players[n].subtotal_bet + players[n].total_bet) + ")";
                if (n == 0)
                document.getElementById("mybet").style.background = "red";
                if (n == 1)
+               {
+               $("#botspeech1").text("All In...");
+               $("#botspeech1").show().delay(5000).fadeOut();
                document.getElementById("bbet1").style.background = "red";
+               }
                if (n == 2)
+               {
+               $("#botspeech2").text("All In...");
+               $("#botspeech2").show().delay(5000).fadeOut();
                document.getElementById("bbet2").style.background = "red";
+               }
                if (n == 3)
+               {
+               $("#botspeech3").text("All In...");
+               $("#botspeech3").show().delay(5000).fadeOut();
                document.getElementById("bbet3").style.background = "red";
+               }
                if (n == 4)
+               {
+               $("#botspeech4").text("All In...");
+               $("#botspeech4").show().delay(5000).fadeOut();
                document.getElementById("bbet4").style.background = "red";
+               }
                if (n == 5)
+               {
+               $("#botspeech5").text("All In...");
+               $("#botspeech5").show().delay(5000).fadeOut();
                document.getElementById("bbet5").style.background = "red";
+               }
                if (n == 6)
+               {
+               $("#botspeech6").text("All In...");
+               $("#botspeech6").show().delay(5000).fadeOut();
                document.getElementById("bbet6").style.background = "red";
+               }
                if (n == 7)
+               {
+               $("#botspeech7").text("All In...");
+               $("#botspeech7").show().delay(5000).fadeOut();
                document.getElementById("bbet7").style.background = "red";
+               }
                if (n == 8)
+               {
+               $("#botspeech8").text("All In...");
+               $("#botspeech8").show().delay(5000).fadeOut();
                document.getElementById("bbet8").style.background = "red"; 
+               }
                if (n == 9)
                document.getElementById("bbet9").style.background = "red"; 
                
     if (n == 0) {
       HUMAN_GOES_ALL_IN = 1;
+      
     }
   } else {
+
     bet_text = allin + "$" + players[n].subtotal_bet +
                " (" + (players[n].subtotal_bet + players[n].total_bet) + ")";
                (players[n].subtotal_bet + players[n].total_bet) + ")";
