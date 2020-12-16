@@ -13,6 +13,8 @@ var audio3 = new Audio('sounds/fold.wav');
 var audio4 = new Audio('sounds/raise.wav');
 var audio5 = new Audio('sounds/chips.wav');
 var audio6 = new Audio('sounds/chipsmed.wav');
+var audio7 = new Audio('sounds/check.wav'); 
+var audio8 = new Audio('sounds/call.wav');
 var START_DATE;
 var NUM_ROUNDS;
 var STOP_AUTOPLAY = 0;
@@ -39,7 +41,7 @@ var percentcomplete = 0;
 var randompokerchips = 0;
 var hideallchips = 0;
 var img = new Array(17);
-
+var checkblinds = 0;
         
 function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
@@ -168,7 +170,7 @@ function double_check() {
 
 function new_game () {
 //marker
-    
+               checkblinds = 0;
                document.getElementById("seat0").style.display = "block";
                document.getElementById("seat1").style.display = "block";
                document.getElementById("seat2").style.display = "block";
@@ -331,6 +333,7 @@ for (var x = 0; x < 20; x++)
             
                document.getElementById("bbet9").style.background = "black";  
   var message = "<b>New round</b>&nbsp;&nbsp;";
+  checkblinds = 0;
   var getmycurrenttime = new Date().toLocaleString();
   mycurrentamount = players[0].bankroll - 500;
   var calcpercentage = ((mycurrentamount * 100) / 4000);
@@ -925,6 +928,7 @@ function autoplay_new_round () {
   if (STOP_AUTOPLAY > 0) {
     STOP_AUTOPLAY = 0;
     mydealershowonce = 0;
+    checkblinds = 0;
     new_game();
   } else {
     mydealershowonce = 0;
@@ -937,6 +941,14 @@ function ready_for_next_card () {
   var i;
   for (i = 0; i < players.length; i++) {
     players[i].total_bet += players[i].subtotal_bet;
+    
+    
+                 
+    
+    
+    
+    
+    
   }
   clear_bets();
   if (board[4]) {
@@ -989,6 +1001,11 @@ function the_bet_function (player_index, bet_amount) {
     if (players[player_index].subtotal_bet + bet_amount > current_bet_amount) {
       current_bet_amount = players[player_index].subtotal_bet + bet_amount;
     }
+    
+                  
+    
+    
+    
 
     // current_min_raise should be calculated earlier ? <--
     var new_current_min_raise = current_bet_amount - old_current_bet;
@@ -1016,6 +1033,10 @@ function the_bet_function (player_index, bet_amount) {
                document.getElementById("bbet8").style.background = "lawngreen";
                if (player_index == 9)
                document.getElementById("bbet9").style.background = "lawngreen";
+               
+             
+               
+               
   } else if (bet_amount + players[player_index].subtotal_bet ==
              current_bet_amount) { // CALL
     players[player_index].status = "CALL";
@@ -1039,6 +1060,9 @@ function the_bet_function (player_index, bet_amount) {
                document.getElementById("bbet8").style.background = "lawngreen";
                if (player_index == 9)
                document.getElementById("bbet9").style.background = "lawngreen";
+               
+
+     
   } else if (current_bet_amount >
              players[player_index].subtotal_bet + bet_amount) { // 2 SMALL
     // COMMENT OUT TO FIND BUGS
@@ -1062,6 +1086,9 @@ function the_bet_function (player_index, bet_amount) {
                document.getElementById("bbet8").style.background = "lawngreen";
                if (player_index == 9)
                document.getElementById("bbet9").style.background = "lawngreen";
+               
+               
+               
     if (player_index == 0) {
       my_pseudo_alert("The current bet to match is " + current_bet_amount +
                       "\nYou must bet a total of at least " +
@@ -1094,6 +1121,8 @@ function the_bet_function (player_index, bet_amount) {
                document.getElementById("bbet8").style.background = "lawngreen";
                if (player_index == 9)
                document.getElementById("bbet9").style.background = "lawngreen";
+               
+
     if (player_index == 0) {
       my_pseudo_alert("Minimum raise is currently " + current_min_raise + ".");
     }
@@ -1120,6 +1149,10 @@ function the_bet_function (player_index, bet_amount) {
                document.getElementById("bbet8").style.background = "lawngreen";
                if (player_index == 9)
                document.getElementById("bbet9").style.background = "lawngreen";
+               
+                        
+               
+               
     var previous_current_bet = current_bet_amount;
     current_bet_amount = players[player_index].subtotal_bet + bet_amount;
 
@@ -1132,8 +1165,83 @@ function the_bet_function (player_index, bet_amount) {
   }
   players[player_index].subtotal_bet += bet_amount;
   players[player_index].bankroll -= bet_amount;
-  
-  
+
+      
+               checkblinds++;
+               if (player_index == 0 && players[0].subtotal_bet == 0 && checkblinds > 3)
+               {
+               document.getElementById("mybet").style.background = "orange";
+               audio7.play();
+               }
+               if (player_index == 1 && players[1].subtotal_bet == 0 && checkblinds > 3)
+               {
+               $("#botspeech1").text("I check...");
+               $("#botspeech1").show().delay(5000).fadeOut();
+               document.getElementById("bbet1").style.background = "orange";
+               audio7.play();
+               }
+               if (player_index == 2 && players[2].subtotal_bet == 0 && checkblinds > 3)
+               {
+               $("#botspeech2").text("I check...");
+               $("#botspeech2").show().delay(5000).fadeOut();
+               document.getElementById("bbet2").style.background = "orange";
+               audio7.play();
+               }
+               if (player_index == 3 && players[3].subtotal_bet == 0 && checkblinds > 3)
+               {
+               $("#botspeech3").text("I check...");
+               $("#botspeech3").show().delay(5000).fadeOut();
+               document.getElementById("bbet3").style.background = "orange";
+               audio7.play();
+               }
+               if (player_index == 4 && players[4].subtotal_bet == 0 && checkblinds > 3)
+               {
+               $("#botspeech4").text("I check...");
+               $("#botspeech4").show().delay(5000).fadeOut();
+               document.getElementById("bbet4").style.background = "orange";
+               audio7.play();
+               }
+               if (player_index == 5 && players[5].subtotal_bet == 0 && checkblinds > 3)
+               {
+               $("#botspeech5").text("I check...");
+               $("#botspeech5").show().delay(5000).fadeOut();
+               document.getElementById("bbet5").style.background = "orange";
+               audio7.play();
+               }
+               if (player_index == 6 && players[6].subtotal_bet == 0 && checkblinds > 3)
+               {
+               $("#botspeech6").text("I check...");
+               $("#botspeech6").show().delay(5000).fadeOut();
+               document.getElementById("bbet6").style.background = "orange";
+               audio7.play();
+               }
+               if (player_index == 7 && players[7].subtotal_bet == 0 && checkblinds > 3)
+               {
+               $("#botspeech7").text("I check...");
+               $("#botspeech7").show().delay(5000).fadeOut();
+               document.getElementById("bbet7").style.background = "orange";
+               audio7.play();
+               }
+               if (player_index == 8 && players[8].subtotal_bet == 0 && checkblinds > 3)
+               {
+               $("#botspeech8").text("I check...");
+               $("#botspeech8").show().delay(5000).fadeOut();
+               document.getElementById("bbet8").style.background = "orange"; 
+               audio7.play();
+               }
+               if (player_index == 9 && players[9].subtotal_bet == 0 && checkblinds > 3)
+               document.getElementById("bbet9").style.background = "orange"; 
+  if (checkblinds > 3)
+  if (players[0].subtotal_bet > 0 || 
+      players[1].subtotal_bet > 0 || 
+      players[2].subtotal_bet > 0 || 
+      players[3].subtotal_bet > 0 || 
+      players[4].subtotal_bet > 0 || 
+      players[5].subtotal_bet > 0 || 
+      players[6].subtotal_bet > 0 || 
+      players[7].subtotal_bet > 0 || 
+      players[8].subtotal_bet > 0)
+      audio8.play();               
   
   //mybankrollchips
   
