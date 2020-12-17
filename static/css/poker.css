@@ -3,21 +3,25 @@ html {
 }
 
 .avatar {
-    margin-top: 0px;
-    margin-left: 40px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+    width: 48px;
+    height: 48px;
+    position: absolute;
 }
 .speech-bubble {
-    background-color: #f8f8f8;
-    border: 1px solid #c8c8c8;
+    background-color: deeppink;
+    border: 1px solid deeppink;
     border-radius: 5px;
     width: 79px;
     height: 10px;
-    color: #000;
+    color: #fff;
     text-align: center;
     padding: 2px;
     position: absolute;
-    left: -30px;
-    top: 0px;
+    left: 40px;
+    top: 30px;
     font-size: 12px;
     line-height: 10px;
 }
@@ -30,7 +34,7 @@ html {
 	width: 0;
 	height: 0;
 	border: 10px solid transparent;
-	border-top-color: #f8f8f8;
+	border-top-color: deeppink;
 	border-bottom: 0;
 	margin-left: -10px;
 	margin-bottom: -10px;
