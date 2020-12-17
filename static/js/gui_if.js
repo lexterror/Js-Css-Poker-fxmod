@@ -150,21 +150,69 @@ function gui_hilite_player (hilite_color, name_color, seat, firedup) {
     chipsdiv.style.background = firedup;
   }
   if (seat == 1 && hilite_color == 'red')
-  document.getElementById("avatar1").src = "icons/_bot1_winner.png";
+  {
+               var avatarname = "avatar" + botarray[0];
+               var avatarimage = "avatar/_bot" + botarray[0] + "_winner.png"
+               document.getElementById(avatarname).src = avatarimage;   
+               $("#botspeech1").text("I win...");
+               $("#botspeech1").show().delay(5000).fadeOut();
+  }
   if (seat == 2 && hilite_color == 'red')
-  document.getElementById("avatar2").src = "icons/_bot2_winner.png";
+  {
+               var avatarname = "avatar" + botarray[1];
+               var avatarimage = "avatar/_bot" + botarray[1] + "_winner.png"
+               document.getElementById(avatarname).src = avatarimage;
+               $("#botspeech2").text("I win...");
+               $("#botspeech2").show().delay(5000).fadeOut();
+  }
   if (seat == 3 && hilite_color == 'red')
-  document.getElementById("avatar3").src = "icons/_bot3_winner.png";
+  {
+               var avatarname = "avatar" + botarray[2];
+               var avatarimage = "avatar/_bot" + botarray[2] + "_winner.png"
+               document.getElementById(avatarname).src = avatarimage;
+               $("#botspeech3").text("I win...");
+               $("#botspeech3").show().delay(5000).fadeOut();
+  }
   if (seat == 4 && hilite_color == 'red')
-  document.getElementById("avatar4").src = "icons/_bot4_winner.png";
+  {
+               var avatarname = "avatar" + botarray[3];
+               var avatarimage = "avatar/_bot" + botarray[3] + "_winner.png"
+               document.getElementById(avatarname).src = avatarimage;
+               $("#botspeech4").text("I win...");
+               $("#botspeech4").show().delay(5000).fadeOut();
+  }
   if (seat == 5 && hilite_color == 'red')
-  document.getElementById("avatar5").src = "icons/_bot5_winner.png";
+  {
+               var avatarname = "avatar" + botarray[4];
+               var avatarimage = "avatar/_bot" + botarray[4] + "_winner.png"
+               document.getElementById(avatarname).src = avatarimage;
+               $("#botspeech5").text("I win...");
+               $("#botspeech5").show().delay(5000).fadeOut();
+  }
   if (seat == 6 && hilite_color == 'red')
-  document.getElementById("avatar6").src = "icons/_bot6_winner.png";
+  {
+               var avatarname = "avatar" + botarray[5];
+               var avatarimage = "avatar/_bot" + botarray[5] + "_winner.png"
+               document.getElementById(avatarname).src = avatarimage;
+               $("#botspeech6").text("I win...");
+               $("#botspeech6").show().delay(5000).fadeOut();
+  }
   if (seat == 7 && hilite_color == 'red')
-  document.getElementById("avatar7").src = "icons/_bot7_winner.png";
+  {
+               var avatarname = "avatar" + botarray[6];
+               var avatarimage = "avatar/_bot" + botarray[6] + "_winner.png"
+               document.getElementById(avatarname).src = avatarimage;
+               $("#botspeech7").text("I win...");
+               $("#botspeech7").show().delay(5000).fadeOut();
+  }
   if (seat == 8 && hilite_color == 'red')
-  document.getElementById("avatar8").src = "icons/_bot8_winner.png";
+  {
+               var avatarname = "avatar" + botarray[7];
+               var avatarimage = "avatar/_bot" + botarray[7] + "_winner.png"
+               document.getElementById(avatarname).src = avatarimage;
+               $("#botspeech8").text("I win...");
+               $("#botspeech8").show().delay(5000).fadeOut();
+  }
 }
 
 function gui_set_bankroll (amount, seat) {
