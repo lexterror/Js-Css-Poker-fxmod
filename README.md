@@ -1,7 +1,7 @@
 # Js-Css-Poker-fxmod
 Javascript Poker Game
 
-<img src="https://imgur.com/LjZSGSA">
+<img src="https://i.imgur.com/LjZSGSA.png">
 
 This project is a mod. The original author/program can be found here: https://sourceforge.net/projects/js-css-poker/
 
