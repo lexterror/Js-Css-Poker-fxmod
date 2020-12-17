@@ -1,20 +1,25 @@
 html {
 
 }
+
+.avatar {
+    margin-top: 0px;
+    margin-left: 40px;
+}
 .speech-bubble {
     background-color: #f8f8f8;
     border: 1px solid #c8c8c8;
     border-radius: 5px;
-    width: 110px;
-    height: 15px;
+    width: 79px;
+    height: 10px;
     color: #000;
     text-align: center;
-    padding: 5px;
+    padding: 2px;
     position: absolute;
-    left: -6px;
+    left: -30px;
     top: 0px;
     font-size: 12px;
-    line-height: 15px;
+    line-height: 10px;
 }
 
 .speech-bubble:after {
@@ -30,7 +35,6 @@ html {
 	margin-left: -10px;
 	margin-bottom: -10px;
 }
-
 .poker-table {
     background-repeat: no-repeat;
     position: absolute;
