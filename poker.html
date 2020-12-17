@@ -128,7 +128,29 @@ progress[value]::-webkit-progress-value {
 </style>
 
 <body onload="parent.init(), checktable(), prechecksound()">
+<script>
+var botarray = [1,2,3,4,5,6,7,8];
+function shufflebots(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
 
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+shufflebots(botarray);
+
+</script>
 <div style="z-index:9999999;width:100%;height:24px;position:fixed;background: #000;bottom:0;margin: 0 auto;">
 <progress id="myprogress" max="100" value="0" style="top:5px;left:0;right:0;width:650px;height:14px;z-index:9999999;margin:0 auto;position:absolute;"></progress>
 </div>
@@ -199,7 +221,9 @@ function display_allplayerpokerchips() {
             <div class="holecards" id="bcplayer">
                 <div class="card holecard1" id="bplayer1"></div>
                 <div class="card holecard2" id="bplayer2"></div>
-                         <img src="" style="width:64px;height:64px;padding: 0 !important;" id="avatar1" class="avatar"><span class="speech-bubble" style="display:none" id="botspeech1"></span>     
+                                    <script>
+     document.write("<img src='' id='avatar" + botarray[0] + "' style='width:64px;height:64px;padding: 0 !important;' class='avatar'>");             
+     </script><span class="speech-bubble" style="display:none" id="botspeech1"></span>     
             </div>
             <div class="name-chips" id="botnamechips">
                 <div class="player-name" id="bplayername"></div>
@@ -235,7 +259,9 @@ function display_allbot1pokerchips() {
             <div class="holecards" id="bcplayer">
                 <div class="card holecard1" id="bplayer1"></div>
                 <div class="card holecard2" id="bplayer2"></div>
-                         <img src="" style="width:64px;height:64px;padding: 0 !important;" id="avatar2" class="avatar"><span class="speech-bubble" style="display:none" id="botspeech2"></span>  
+                                                 <script>
+     document.write("<img src='' id='avatar" + botarray[1] + "' style='width:64px;height:64px;padding: 0 !important;' class='avatar'>");             
+     </script><span class="speech-bubble" style="display:none" id="botspeech2"></span>  
             </div>
             <div class="name-chips" id="botnamechips">
 
@@ -270,7 +296,9 @@ function display_allbot2pokerchips() {
             <div class="holecards" id="bcplayer">
                 <div class="card holecard1" id="bplayer1"></div>
                 <div class="card holecard2" id="bplayer2"></div>
-                                  <img src="" style="width:64px;height:64px;padding: 0 !important;" id="avatar3" class="avatar"><span class="speech-bubble" style="display:none" id="botspeech3"></span>   
+                                            <script>
+     document.write("<img src='' id='avatar" + botarray[2] + "' style='width:64px;height:64px;padding: 0 !important;' class='avatar'>");             
+     </script><span class="speech-bubble" style="display:none" id="botspeech3"></span>   
             </div>
             <div class="name-chips" id="botnamechips">
 
@@ -305,7 +333,9 @@ function display_allbot3pokerchips() {
             <div class="holecards" id="bcplayer">
                 <div class="card holecard1" id="bplayer1"></div>
                 <div class="card holecard2" id="bplayer2"></div>
-                         <img src="" style="width:64px;height:64px;padding: 0 !important;" id="avatar4" class="avatar"><span class="speech-bubble" style="display:none" id="botspeech4"></span>   
+                                               <script>
+     document.write("<img src='' id='avatar" + botarray[3] + "' style='width:64px;height:64px;padding: 0 !important;' class='avatar'>");             
+     </script><span class="speech-bubble" style="display:none" id="botspeech4"></span>   
             </div>
             <div class="name-chips" id="botnamechips">
  
@@ -340,7 +370,9 @@ function display_allbot4pokerchips() {
             <div class="holecards" id="bcplayer">
                 <div class="card holecard1" id="bplayer1"></div>
                 <div class="card holecard2" id="bplayer2"></div>
-                              <img src="" style="width:64px;height:64px;padding: 0 !important;" id="avatar5" class="avatar"><span class="speech-bubble" style="display:none" id="botspeech5"></span>  
+                                                   <script>
+     document.write("<img src='' id='avatar" + botarray[4] + "' style='width:64px;height:64px;padding: 0 !important;' class='avatar'>");             
+     </script><span class="speech-bubble" style="display:none" id="botspeech5"></span>  
             </div>
             <div class="name-chips" id="botnamechips">
          
@@ -375,7 +407,9 @@ function display_allbot5pokerchips() {
             <div class="holecards" id="bcplayer">
                 <div class="card holecard1" id="bplayer1"></div>
                 <div class="card holecard2" id="bplayer2"></div>
-                         <img src="" style="width:64px;height:64px;padding: 0 !important;" id="avatar6" class="avatar"><span class="speech-bubble" style="display:none" id="botspeech6"></span>   
+                                                <script>
+     document.write("<img src='' id='avatar" + botarray[5] + "' style='width:64px;height:64px;padding: 0 !important;' class='avatar'>");             
+     </script><span class="speech-bubble" style="display:none" id="botspeech6"></span>   
             </div>
             <div class="name-chips" id="botnamechips">
 
@@ -410,7 +444,9 @@ function display_allbot6pokerchips() {
             <div class="holecards" id="bcplayer">
                 <div class="card holecard1" id="bplayer1"></div>
                 <div class="card holecard2" id="bplayer2"></div>
-                         <img src="" style="width:64px;height:64px;padding: 0 !important;" id="avatar7" class="avatar"> <span class="speech-bubble" style="display:none" id="botspeech7"></span>  
+                                                   <script>
+     document.write("<img src='' id='avatar" + botarray[6] + "' style='width:64px;height:64px;padding: 0 !important;' class='avatar'>");             
+     </script><span class="speech-bubble" style="display:none" id="botspeech7"></span>  
             </div>
             <div class="name-chips" id="botnamechips">
             
@@ -445,7 +481,9 @@ function display_allbot7pokerchips() {
             <div class="holecards" id="bcplayer">
                 <div class="card holecard1" id="bplayer1"></div>
                 <div class="card holecard2" id="bplayer2"></div>
-                         <img src="" style="width:64px;height:64px;padding: 0 !important;" id="avatar8" class="avatar"><span class="speech-bubble" style="display:none" id="botspeech8"></span>   
+                                                    <script>
+     document.write("<img src='' id='avatar" + botarray[7] + "' style='width:64px;height:64px;padding: 0 !important;' class='avatar'>");             
+     </script><span class="speech-bubble" style="display:none" id="botspeech8"></span>   
             </div>
             <div class="name-chips" id="botnamechips">
         
