@@ -170,21 +170,21 @@ function double_check() {
 
 function new_game () {
 //marker
-     document.getElementById("avatar1").src = "icons/_bot1_normal.png";    
+     document.getElementById("avatar1").src = "avatar/_bot1_normal.png";    
 
-     document.getElementById("avatar2").src = "icons/_bot2_normal.png";    
+     document.getElementById("avatar2").src = "avatar/_bot2_normal.png";    
 
-     document.getElementById("avatar3").src = "icons/_bot3_normal.png";    
+     document.getElementById("avatar3").src = "avatar/_bot3_normal.png";    
 
-     document.getElementById("avatar4").src = "icons/_bot4_normal.png";    
+     document.getElementById("avatar4").src = "avatar/_bot4_normal.png";    
 
-     document.getElementById("avatar5").src = "icons/_bot5_normal.png";    
+     document.getElementById("avatar5").src = "avatar/_bot5_normal.png";    
 
-     document.getElementById("avatar6").src = "icons/_bot6_normal.png";    
+     document.getElementById("avatar6").src = "avatar/_bot6_normal.png";    
  
-     document.getElementById("avatar7").src = "icons/_bot7_normal.png";    
+     document.getElementById("avatar7").src = "avatar/_bot7_normal.png";    
 
-     document.getElementById("avatar8").src = "icons/_bot8_normal.png";
+     document.getElementById("avatar8").src = "avatar/_bot8_normal.png";
                checkblinds = 0;
                document.getElementById("seat0").style.display = "block";
                document.getElementById("seat1").style.display = "block";
@@ -223,16 +223,15 @@ for (var x = 0; x < 20; x++)
 
 function new_game_continues (req_no_opponents) {
   var my_players = [
-                    new player("bot 1x", 0, "", "", "", 0, 0),
-                    new player("bot 2x", 0, "", "", "", 0, 0),
-                    new player("bot 3x", 0, "", "", "", 0, 0),
-                    new player("bot 4x", 0, "", "", "", 0, 0),
-                    new player("bot 5x", 0, "", "", "", 0, 0),
-                    new player("bot 6x", 0, "", "", "", 0, 0),
-                    new player("bot 7x", 0, "", "", "", 0, 0),
-                    //  Żółć - Grzegorz Brzęczyszczykiewicz
-                    new player("bot 8x", 0, "", "", "", 0, 0),
-                    new player("bot 9x", 0, "", "", "", 0, 0)
+                    new player("Olivia", 0, "", "", "", 0, 0),
+                    new player("Emma", 0, "", "", "", 0, 0),
+                    new player("Eva", 0, "", "", "", 0, 0),
+                    new player("Sophia", 0, "", "", "", 0, 0),
+                    new player("Isabella", 0, "", "", "", 0, 0),
+                    new player("Charlotte", 0, "", "", "", 0, 0),
+                    new player("Amelia", 0, "", "", "", 0, 0),
+                    new player("Mia", 0, "", "", "", 0, 0),
+                    new player("Harper", 0, "", "", "", 0, 0)
                    ];
 
   players = new Array(req_no_opponents + 1);
@@ -241,11 +240,34 @@ function new_game_continues (req_no_opponents) {
     player_name = "You";
   }
   players[0] = new player(player_name, 0, "", "", "", 0, 0);
-  my_players.sort(compRan);
+
+  
+  //my_players.sort(compRan);
   var i;
-  for (i = 1; i < players.length; i++) {
-    players[i] = my_players[i - 1];
-  }
+  //for (i = 1; i < players.length; i++) {
+  //  players[i] = my_players[i - 1];
+  //}
+  var mybot1 = botarray[0];
+  var mybot2 = botarray[1];
+  var mybot3 = botarray[2];
+  var mybot4 = botarray[3];
+  var mybot5 = botarray[4];
+  var mybot6 = botarray[5];
+  var mybot7 = botarray[6];
+  var mybot8 = botarray[7];
+  players[1] = my_players[mybot1 -1];
+  players[2] = my_players[mybot2 -1];
+  players[3] = my_players[mybot3 -1];
+  players[4] = my_players[mybot4 -1];
+  players[5] = my_players[mybot5 -1];
+  players[6] = my_players[mybot6 -1];
+  players[7] = my_players[mybot7 -1];
+  players[8] = my_players[mybot8 -1];  
+  
+  
+  
+  
+  
   clear_player_cards(my_players.length);
   reset_player_statuses(0);
   clear_bets();
@@ -327,21 +349,21 @@ for (var x = 0; x < 20; x++)
 }
   randompokerchips = 0;  
   
-      document.getElementById("avatar1").src = "icons/_bot1_normal.png";    
+      document.getElementById("avatar1").src = "avatar/_bot1_normal.png";    
 
-     document.getElementById("avatar2").src = "icons/_bot2_normal.png";    
+     document.getElementById("avatar2").src = "avatar/_bot2_normal.png";    
 
-     document.getElementById("avatar3").src = "icons/_bot3_normal.png";    
+     document.getElementById("avatar3").src = "avatar/_bot3_normal.png";    
 
-     document.getElementById("avatar4").src = "icons/_bot4_normal.png";    
+     document.getElementById("avatar4").src = "avatar/_bot4_normal.png";    
 
-     document.getElementById("avatar5").src = "icons/_bot5_normal.png";    
+     document.getElementById("avatar5").src = "avatar/_bot5_normal.png";    
 
-     document.getElementById("avatar6").src = "icons/_bot6_normal.png";    
+     document.getElementById("avatar6").src = "avatar/_bot6_normal.png";    
  
-     document.getElementById("avatar7").src = "icons/_bot7_normal.png";    
+     document.getElementById("avatar7").src = "avatar/_bot7_normal.png";    
 
-     document.getElementById("avatar8").src = "icons/_bot8_normal.png"; 
+     document.getElementById("avatar8").src = "avatar/_bot8_normal.png"; 
        
                document.getElementById("mybet").style.background = "black";
                document.getElementById("bbet1").style.background = "black";
@@ -362,22 +384,7 @@ for (var x = 0; x < 20; x++)
             
                document.getElementById("bbet9").style.background = "black";  
                
-               if (players[1].status == "BUST")
-               document.getElementById("avatar1").src = "icons/_bot1_normal.png";
-               if (players[2].status == "BUST")
-               document.getElementById("avatar2").src = "icons/_bot2_normal.png";
-               if (players[3].status == "BUST")
-               document.getElementById("avatar3").src = "icons/_bot3_normal.png";
-               if (players[4].status == "BUST")
-               document.getElementById("avatar4").src = "icons/_bot4_normal.png";
-               if (players[5].status == "BUST")
-               document.getElementById("avatar5").src = "icons/_bot5_normal.png";
-               if (players[6].status == "BUST")
-               document.getElementById("avatar6").src = "icons/_bot6_normal.png";
-               if (players[7].status == "BUST")
-               document.getElementById("avatar7").src = "icons/_bot7_normal.png";
-               if (players[8].status == "BUST")
-               document.getElementById("avatar8").src = "icons/_bot8_normal.png"; 
+           
   var message = "<b>New round</b>&nbsp;&nbsp;";
   checkblinds = 0;
   var getmycurrenttime = new Date().toLocaleString();
@@ -889,16 +896,18 @@ function handle_end_of_round () {
   var getmycurrenttime = new Date().toLocaleString();
   var winningstring =   "[" + getmycurrenttime + "] " + "<font color='blue'>Game</font>: " + mynumberofgames + ", <font color='blue'>You win this round</font>: " + mynumberofroundswon + "/" + mynumberofrounds;
  // gui_log_to_history(winningstring);
-       document.getElementById("avatar1").src = "icons/_bot1_normal.png"; 
-       document.getElementById("avatar2").src = "icons/_bot2_normal.png";
-       document.getElementById("avatar3").src = "icons/_bot3_normal.png";
-       document.getElementById("avatar4").src = "icons/_bot4_normal.png";
-       document.getElementById("avatar5").src = "icons/_bot5_normal.png";
-       document.getElementById("avatar6").src = "icons/_bot6_normal.png";
-       document.getElementById("avatar7").src = "icons/_bot7_normal.png";
-       document.getElementById("avatar8").src = "icons/_bot8_normal.png";    
+       document.getElementById("avatar1").src = "avatar/_bot1_normal.png"; 
+       document.getElementById("avatar2").src = "avatar/_bot2_normal.png";
+       document.getElementById("avatar3").src = "avatar/_bot3_normal.png";
+       document.getElementById("avatar4").src = "avatar/_bot4_normal.png";
+       document.getElementById("avatar5").src = "avatar/_bot5_normal.png";
+       document.getElementById("avatar6").src = "avatar/_bot6_normal.png";
+       document.getElementById("avatar7").src = "avatar/_bot7_normal.png";
+       document.getElementById("avatar8").src = "avatar/_bot8_normal.png";    
   } else {
     HUMAN_WINS_AGAIN = 0;
+
+    
     
     
   
@@ -973,14 +982,14 @@ function handle_end_of_round () {
         end_msg += "\n\nYOU WIN " + players[0].name.toUpperCase() + "!!!";
             audio1.play();
             audio5.play();
-       document.getElementById("avatar1").src = "icons/_bot1_normal.png"; 
-       document.getElementById("avatar2").src = "icons/_bot2_normal.png";
-       document.getElementById("avatar3").src = "icons/_bot3_normal.png";
-       document.getElementById("avatar4").src = "icons/_bot4_normal.png";
-       document.getElementById("avatar5").src = "icons/_bot5_normal.png";
-       document.getElementById("avatar6").src = "icons/_bot6_normal.png";
-       document.getElementById("avatar7").src = "icons/_bot7_normal.png";
-       document.getElementById("avatar8").src = "icons/_bot8_normal.png";
+       document.getElementById("avatar1").src = "avatar/_bot1_normal.png"; 
+       document.getElementById("avatar2").src = "avatar/_bot2_normal.png";
+       document.getElementById("avatar3").src = "avatar/_bot3_normal.png";
+       document.getElementById("avatar4").src = "avatar/_bot4_normal.png";
+       document.getElementById("avatar5").src = "avatar/_bot5_normal.png";
+       document.getElementById("avatar6").src = "avatar/_bot6_normal.png";
+       document.getElementById("avatar7").src = "avatar/_bot7_normal.png";
+       document.getElementById("avatar8").src = "avatar/_bot8_normal.png";
    
       } else {
         end_msg += "\n\nSorry, you lost.";
@@ -993,21 +1002,21 @@ function handle_end_of_round () {
 
 function autoplay_new_round () {
 
-     document.getElementById("avatar1").src = "icons/_bot1_normal.png";    
+     document.getElementById("avatar1").src = "avatar/_bot1_normal.png";    
 
-     document.getElementById("avatar2").src = "icons/_bot2_normal.png";    
+     document.getElementById("avatar2").src = "avatar/_bot2_normal.png";    
 
-     document.getElementById("avatar3").src = "icons/_bot3_normal.png";    
+     document.getElementById("avatar3").src = "avatar/_bot3_normal.png";    
 
-     document.getElementById("avatar4").src = "icons/_bot4_normal.png";    
+     document.getElementById("avatar4").src = "avatar/_bot4_normal.png";    
 
-     document.getElementById("avatar5").src = "icons/_bot5_normal.png";    
+     document.getElementById("avatar5").src = "avatar/_bot5_normal.png";    
 
-     document.getElementById("avatar6").src = "icons/_bot6_normal.png";    
+     document.getElementById("avatar6").src = "avatar/_bot6_normal.png";    
  
-     document.getElementById("avatar7").src = "icons/_bot7_normal.png";    
+     document.getElementById("avatar7").src = "avatar/_bot7_normal.png";    
 
-     document.getElementById("avatar8").src = "icons/_bot8_normal.png";    
+     document.getElementById("avatar8").src = "avatar/_bot8_normal.png";    
   
   if (STOP_AUTOPLAY > 0) {
     STOP_AUTOPLAY = 0;
@@ -1260,14 +1269,18 @@ function the_bet_function (player_index, bet_amount) {
                if (player_index == 1 && players[1].subtotal_bet == 0 && checkblinds > 3)
                {
                $("#botspeech1").text("I check...");
-               document.getElementById("avatar1").src = "icons/_bot1_call.png";
+               var avatarname = "avatar" + botarray[0];
+               var avatarimage = "avatar/_bot" + botarray[0] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech1").show().delay(5000).fadeOut();
                document.getElementById("bbet1").style.background = "orange";
                audio7.play();
                }
                if (player_index == 2 && players[2].subtotal_bet == 0 && checkblinds > 3)
                {
-               document.getElementById("avatar2").src = "icons/_bot2_call.png";
+               var avatarname = "avatar" + botarray[1];
+               var avatarimage = "avatar/_bot" + botarray[1] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech2").text("I check...");
                $("#botspeech2").show().delay(5000).fadeOut();
                document.getElementById("bbet2").style.background = "orange";
@@ -1275,7 +1288,9 @@ function the_bet_function (player_index, bet_amount) {
                }
                if (player_index == 3 && players[3].subtotal_bet == 0 && checkblinds > 3)
                {
-               document.getElementById("avatar3").src = "icons/_bot3_call.png";
+               var avatarname = "avatar" + botarray[2];
+               var avatarimage = "avatar/_bot" + botarray[2] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech3").text("I check...");
                $("#botspeech3").show().delay(5000).fadeOut();
                document.getElementById("bbet3").style.background = "orange";
@@ -1283,7 +1298,9 @@ function the_bet_function (player_index, bet_amount) {
                }
                if (player_index == 4 && players[4].subtotal_bet == 0 && checkblinds > 3)
                {
-               document.getElementById("avatar4").src = "icons/_bot4_call.png";
+               var avatarname = "avatar" + botarray[3];
+               var avatarimage = "avatar/_bot" + botarray[3] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech4").text("I check...");
                $("#botspeech4").show().delay(5000).fadeOut();
                document.getElementById("bbet4").style.background = "orange";
@@ -1291,7 +1308,9 @@ function the_bet_function (player_index, bet_amount) {
                }
                if (player_index == 5 && players[5].subtotal_bet == 0 && checkblinds > 3)
                {
-               document.getElementById("avatar5").src = "icons/_bot5_call.png";
+               var avatarname = "avatar" + botarray[4];
+               var avatarimage = "avatar/_bot" + botarray[4] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech5").text("I check...");
                $("#botspeech5").show().delay(5000).fadeOut();
                document.getElementById("bbet5").style.background = "orange";
@@ -1299,7 +1318,9 @@ function the_bet_function (player_index, bet_amount) {
                }
                if (player_index == 6 && players[6].subtotal_bet == 0 && checkblinds > 3)
                {
-               document.getElementById("avatar6").src = "icons/_bot6_call.png";
+               var avatarname = "avatar" + botarray[5];
+               var avatarimage = "avatar/_bot" + botarray[5] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech6").text("I check...");
                $("#botspeech6").show().delay(5000).fadeOut();
                document.getElementById("bbet6").style.background = "orange";
@@ -1307,7 +1328,9 @@ function the_bet_function (player_index, bet_amount) {
                }
                if (player_index == 7 && players[7].subtotal_bet == 0 && checkblinds > 3)
                {
-               document.getElementById("avatar7").src = "icons/_bot7_call.png";
+               var avatarname = "avatar" + botarray[6];
+               var avatarimage = "avatar/_bot" + botarray[6] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech7").text("I check...");
                $("#botspeech7").show().delay(5000).fadeOut();
                document.getElementById("bbet7").style.background = "orange";
@@ -1315,7 +1338,9 @@ function the_bet_function (player_index, bet_amount) {
                }
                if (player_index == 8 && players[8].subtotal_bet == 0 && checkblinds > 3)
                {
-               document.getElementById("avatar8").src = "icons/_bot8_call.png";
+               var avatarname = "avatar" + botarray[7];
+               var avatarimage = "avatar/_bot" + botarray[7] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech8").text("I check...");
                $("#botspeech8").show().delay(5000).fadeOut();
                document.getElementById("bbet8").style.background = "orange"; 
@@ -2268,7 +2293,10 @@ function bet_from_bot (x) {
                {
                
                document.getElementById("bbet1").style.background = "black";
-               document.getElementById("avatar1").src = "icons/_bot1_normal.png";
+               var avatarname = "avatar" + botarray[0];
+               var avatarimage = "avatar/_bot" + botarray[0] + "_normal.png"
+               document.getElementById(avatarname).src = avatarimage;
+               
                $("#botspeech1").text("I fold...");
                $("#botspeech1").show().delay(5000).fadeOut();
                }
@@ -2276,41 +2304,53 @@ function bet_from_bot (x) {
                {
                $("#botspeech2").text("I fold...");
                $("#botspeech2").show().delay(5000).fadeOut();
-               document.getElementById("avatar2").src = "icons/_bot2_normal.png";
+               var avatarname = "avatar" + botarray[1];
+               var avatarimage = "avatar/_bot" + botarray[1] + "_normal.png"
+               document.getElementById(avatarname).src = avatarimage;
                document.getElementById("bbet2").style.background = "black";
                }
                if (x == 3)
                {
                $("#botspeech3").text("I fold...");
                $("#botspeech3").show().delay(5000).fadeOut();
-               document.getElementById("avatar3").src = "icons/_bot3_normal.png";
+               var avatarname = "avatar" + botarray[2];
+               var avatarimage = "avatar/_bot" + botarray[2] + "_normal.png"
+               document.getElementById(avatarname).src = avatarimage;
                document.getElementById("bbet3").style.background = "black";
                }
                if (x == 4)
                {
                $("#botspeech4").text("I fold...");
                $("#botspeech4").show().delay(5000).fadeOut();
-               document.getElementById("avatar4").src = "icons/_bot4_normal.png";
+               var avatarname = "avatar" + botarray[3];
+               var avatarimage = "avatar/_bot" + botarray[3] + "_normal.png"
+               document.getElementById(avatarname).src = avatarimage;
                document.getElementById("bbet4").style.background = "black";
                }
                if (x == 5)
                {
                $("#botspeech5").text("I fold...");
-               document.getElementById("avatar5").src = "icons/_bot5_normal.png";
+               var avatarname = "avatar" + botarray[4];
+               var avatarimage = "avatar/_bot" + botarray[4] + "_normal.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech5").show().delay(5000).fadeOut();
                document.getElementById("bbet5").style.background = "black";
                }
                if (x == 6)
                {
                $("#botspeech6").text("I fold...");
-               document.getElementById("avatar6").src = "icons/_bot6_normal.png";
+               var avatarname = "avatar" + botarray[5];
+               var avatarimage = "avatar/_bot" + botarray[5] + "_normal.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech6").show().delay(5000).fadeOut();
                document.getElementById("bbet6").style.background = "black";
                }
                if (x == 7)
                {
                $("#botspeech7").text("I fold...");
-               document.getElementById("avatar7").src = "icons/_bot7_normal.png";
+               var avatarname = "avatar" + botarray[6];
+               var avatarimage = "avatar/_bot" + botarray[6] + "_normal.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech7").show().delay(5000).fadeOut();
                document.getElementById("bbet7").style.background = "black";
                }
@@ -2318,7 +2358,9 @@ function bet_from_bot (x) {
                {
                $("#botspeech8").text("I fold...");
                $("#botspeech8").show().delay(5000).fadeOut();
-               document.getElementById("avatar8").src = "icons/_bot8_normal.png";
+               var avatarname = "avatar" + botarray[7];
+               var avatarimage = "avatar/_bot" + botarray[7] + "_normal.png"
+               document.getElementById(avatarname).src = avatarimage;
                document.getElementById("bbet8").style.background = "black";
                } 
                if (x == 9)
@@ -2332,8 +2374,11 @@ function bet_from_bot (x) {
                }
                if (x == 1)
                {
+         
+               var avatarname = "avatar" + botarray[0];
+               var avatarimage = "avatar/_bot" + botarray[0] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech1").text("I call...");
-               document.getElementById("avatar1").src = "icons/_bot1_call.png";
                $("#botspeech1").show().delay(5000).fadeOut();
                document.getElementById("bbet1").style.background = "lawngreen";
                }
@@ -2341,14 +2386,18 @@ function bet_from_bot (x) {
                {
                $("#botspeech2").text("I call...");
                
-            document.getElementById("avatar2").src = "icons/_bot2_call.png";
+               var avatarname = "avatar" + botarray[1];
+               var avatarimage = "avatar/_bot" + botarray[1] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech2").show().delay(5000).fadeOut();
                document.getElementById("bbet2").style.background = "lawngreen";
                }
                if (x == 3)
                {
                $("#botspeech3").text("I call...");
-               document.getElementById("avatar3").src = "icons/_bot3_call.png";
+               var avatarname = "avatar" + botarray[2];
+               var avatarimage = "avatar/_bot" + botarray[2] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech3").show().delay(5000).fadeOut();
                document.getElementById("bbet3").style.background = "lawngreen";
                }
@@ -2356,34 +2405,44 @@ function bet_from_bot (x) {
                {
                $("#botspeech4").text("I call...");
                $("#botspeech4").show().delay(5000).fadeOut();
-               document.getElementById("avatar4").src = "icons/_bot4_call.png";
+               var avatarname = "avatar" + botarray[3];
+               var avatarimage = "avatar/_bot" + botarray[3] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                document.getElementById("bbet4").style.background = "lawngreen";
                }
                if (x == 5)
                {
                $("#botspeech5").text("I call...");
-               document.getElementById("avatar5").src = "icons/_bot5_call.png";
+               var avatarname = "avatar" + botarray[4];
+               var avatarimage = "avatar/_bot" + botarray[4] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech5").show().delay(5000).fadeOut();
                document.getElementById("bbet5").style.background = "lawngreen";
                }
                if (x == 6)
                {
                $("#botspeech6").text("I call...");
-               document.getElementById("avatar6").src = "icons/_bot6_call.png";
+               var avatarname = "avatar" + botarray[5];
+               var avatarimage = "avatar/_bot" + botarray[5] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech6").show().delay(5000).fadeOut();
                document.getElementById("bbet6").style.background = "lawngreen";
                }
                if (x == 7)
                {
                $("#botspeech7").text("I call...");
-               document.getElementById("avatar7").src = "icons/_bot7_call.png";
+               var avatarname = "avatar" + botarray[6];
+               var avatarimage = "avatar/_bot" + botarray[6] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech7").show().delay(5000).fadeOut();
                document.getElementById("bbet7").style.background = "lawngreen";
                }
                if (x == 8)
                {
                $("#botspeech8").text("I call...");
-               document.getElementById("avatar8").src = "icons/_bot8_call.png";
+               var avatarname = "avatar" + botarray[7];
+               var avatarimage = "avatar/_bot" + botarray[7] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech8").show().delay(5000).fadeOut();
                document.getElementById("bbet8").style.background = "lawngreen"; 
                }
@@ -2401,7 +2460,9 @@ function bet_from_bot (x) {
                if (x == 1)
                {
                $("#botspeech1").text("I call...");
-               document.getElementById("avatar1").src = "icons/_bot1_call.png";
+               var avatarname = "avatar" + botarray[0];
+               var avatarimage = "avatar/_bot" + botarray[0] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech1").show().delay(5000).fadeOut();
                document.getElementById("bbet1").style.background = "lawngreen";
                }
@@ -2409,14 +2470,18 @@ function bet_from_bot (x) {
                {
                $("#botspeech2").text("I call...");
                
-            document.getElementById("avatar2").src = "icons/_bot2_call.png";
+               var avatarname = "avatar" + botarray[1];
+               var avatarimage = "avatar/_bot" + botarray[1] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech2").show().delay(5000).fadeOut();
                document.getElementById("bbet2").style.background = "lawngreen";
                }
                if (x == 3)
                {
                $("#botspeech3").text("I call...");
-               document.getElementById("avatar3").src = "icons/_bot3_call.png";
+                var avatarname = "avatar" + botarray[2];
+               var avatarimage = "avatar/_bot" + botarray[2] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech3").show().delay(5000).fadeOut();
                document.getElementById("bbet3").style.background = "lawngreen";
                }
@@ -2424,34 +2489,44 @@ function bet_from_bot (x) {
                {
                $("#botspeech4").text("I call...");
                $("#botspeech4").show().delay(5000).fadeOut();
-               document.getElementById("avatar4").src = "icons/_bot4_call.png";
+               var avatarname = "avatar" + botarray[3];
+               var avatarimage = "avatar/_bot" + botarray[3] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                document.getElementById("bbet4").style.background = "lawngreen";
                }
                if (x == 5)
                {
                $("#botspeech5").text("I call...");
-               document.getElementById("avatar5").src = "icons/_bot5_call.png";
+                 var avatarname = "avatar" + botarray[4];
+               var avatarimage = "avatar/_bot" + botarray[4] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech5").show().delay(5000).fadeOut();
                document.getElementById("bbet5").style.background = "lawngreen";
                }
                if (x == 6)
                {
                $("#botspeech6").text("I call...");
-               document.getElementById("avatar6").src = "icons/_bot6_call.png";
+               var avatarname = "avatar" + botarray[5];
+               var avatarimage = "avatar/_bot" + botarray[5] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech6").show().delay(5000).fadeOut();
                document.getElementById("bbet6").style.background = "lawngreen";
                }
                if (x == 7)
                {
                $("#botspeech7").text("I call...");
-               document.getElementById("avatar7").src = "icons/_bot7_call.png";
+               var avatarname = "avatar" + botarray[6];
+               var avatarimage = "avatar/_bot" + botarray[6] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech7").show().delay(5000).fadeOut();
                document.getElementById("bbet7").style.background = "lawngreen";
                }
                if (x == 8)
                {
                $("#botspeech8").text("I call...");
-               document.getElementById("avatar8").src = "icons/_bot8_call.png";
+               var avatarname = "avatar" + botarray[7];
+               var avatarimage = "avatar/_bot" + botarray[7] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech8").show().delay(5000).fadeOut();
                document.getElementById("bbet8").style.background = "lawngreen"; 
                }
@@ -2467,56 +2542,73 @@ function bet_from_bot (x) {
                }
                if (x == 1)
                {
-               document.getElementById("avatar1").src = "icons/_bot1_call.png";
+               var avatarname = "avatar" + botarray[0];
+               var avatarimage = "avatar/_bot" + botarray[0] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech1").text("I raise...");
                $("#botspeech1").show().delay(5000).fadeOut();
                document.getElementById("bbet1").style.background = "lawngreen";
                }
                if (x == 2)
                {
-               document.getElementById("avatar2").src = "icons/_bot2_call.png";
+               var avatarname = "avatar" + botarray[1];
+               var avatarimage = "avatar/_bot" + botarray[1] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech2").text("I raise...");
                $("#botspeech2").show().delay(5000).fadeOut();
                document.getElementById("bbet2").style.background = "lawngreen";
                }
                if (x == 3)
                {
-               document.getElementById("avatar3").src = "icons/_bot3_call.png";
+               var avatarname = "avatar" + botarray[2];
+               var avatarimage = "avatar/_bot" + botarray[2] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech3").text("I raise...");
                $("#botspeech3").show().delay(5000).fadeOut();
                document.getElementById("bbet3").style.background = "lawngreen";
                }
                if (x == 4)
                {
-               document.getElementById("avatar4").src = "icons/_bot4_call.png";
+               var avatarname = "avatar" + botarray[3];
+               var avatarimage = "avatar/_bot" + botarray[3] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech4").text("I raise...");
                $("#botspeech4").show().delay(5000).fadeOut();
                document.getElementById("bbet4").style.background = "lawngreen";
                }
                if (x == 5)
                {
-               document.getElementById("avatar5").src = "icons/_bot5_call.png";
+               var avatarname = "avatar" + botarray[4];
+               var avatarimage = "avatar/_bot" + botarray[4] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech5").text("I raise...");
                $("#botspeech5").show().delay(5000).fadeOut();
                document.getElementById("bbet5").style.background = "lawngreen";
                }
                if (x == 6)
                {
-               document.getElementById("avatar6").src = "icons/_bot6_call.png";
+               document.getElementById("avatar6").src = "avatar/_bot6_call.png";
+               var avatarname = "avatar" + botarray[5];
+               var avatarimage = "avatar/_bot" + botarray[5] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech6").text("I raise...");
                $("#botspeech6").show().delay(5000).fadeOut();
                document.getElementById("bbet6").style.background = "lawngreen";
                }
                if (x == 7)
                {
-               document.getElementById("avatar7").src = "icons/_bot7_call.png";
+               var avatarname = "avatar" + botarray[6];
+               var avatarimage = "avatar/_bot" + botarray[6] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech7").text("I raise...");
                $("#botspeech7").show().delay(5000).fadeOut();
                document.getElementById("bbet7").style.background = "lawngreen";
                }
                if (x == 8)
                {
-               document.getElementById("avatar8").src = "icons/_bot8_call.png";
+               var avatarname = "avatar" + botarray[7];
+               var avatarimage = "avatar/_bot" + botarray[7] + "_call.png"
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech8").text("I raise...");
                $("#botspeech8").show().delay(5000).fadeOut();
                document.getElementById("bbet8").style.background = "lawngreen"; 
@@ -2619,21 +2711,53 @@ function write_player (n, hilite, show_cards) {
     }
   } else if (players[n].status == "BUST") {
                if (players[1].status == "BUST")
-               document.getElementById("avatar1").src = "icons/_bot1_normal.png";
+               {
+               var avatarname = "avatar" + botarray[0];
+               var avatarimage = "avatar/_bot" + botarray[0] + "_normal.png";
+               document.getElementById(avatarname).src = avatarimage;
+               }
                if (players[2].status == "BUST")
-               document.getElementById("avatar2").src = "icons/_bot2_normal.png";
+               {
+               var avatarname = "avatar" + botarray[1];
+               var avatarimage = "avatar/_bot" + botarray[1] + "_normal.png";
+               document.getElementById(avatarname).src = avatarimage;
+               }
                if (players[3].status == "BUST")
-               document.getElementById("avatar3").src = "icons/_bot3_normal.png";
+               {
+               var avatarname = "avatar" + botarray[2];
+               var avatarimage = "avatar/_bot" + botarray[2] + "_normal.png";
+               document.getElementById(avatarname).src = avatarimage;
+               }
                if (players[4].status == "BUST")
-               document.getElementById("avatar4").src = "icons/_bot4_normal.png";
+               {
+               var avatarname = "avatar" + botarray[3];
+               var avatarimage = "avatar/_bot" + botarray[3] + "_normal.png";
+               document.getElementById(avatarname).src = avatarimage;
+               }
                if (players[5].status == "BUST")
-               document.getElementById("avatar5").src = "icons/_bot5_normal.png";
+               {
+               var avatarname = "avatar" + botarray[4];
+               var avatarimage = "avatar/_bot" + botarray[4] + "_normal.png";
+               document.getElementById(avatarname).src = avatarimage;
+               }
                if (players[6].status == "BUST")
-               document.getElementById("avatar6").src = "icons/_bot6_normal.png";
+               {
+               var avatarname = "avatar" + botarray[5];
+               var avatarimage = "avatar/_bot" + botarray[5] + "_normal.png";
+               document.getElementById(avatarname).src = avatarimage;
+               }
                if (players[7].status == "BUST")
-               document.getElementById("avatar7").src = "icons/_bot7_normal.png";
+               {
+               var avatarname = "avatar" + botarray[6];
+               var avatarimage = "avatar/_bot" + botarray[6] + "_normal.png";
+               document.getElementById(avatarname).src = avatarimage;
+               }
                if (players[8].status == "BUST")
-               document.getElementById("avatar8").src = "icons/_bot8_normal.png"; 
+               {
+               var avatarname = "avatar" + botarray[7];
+               var avatarimage = "avatar/_bot" + botarray[7] + "_normal.png";
+               document.getElementById(avatarname).src = avatarimage;
+               }
     bet_text = "BUSTED";
     if (n == 0) {
       HUMAN_GOES_ALL_IN = 0;
@@ -2648,56 +2772,72 @@ function write_player (n, hilite, show_cards) {
                document.getElementById("mybet").style.background = "red";
                if (n == 1)
                {
-               document.getElementById("avatar1").src = "icons/_bot1_call.png";
+               var avatarname = "avatar" + botarray[0];
+               var avatarimage = "avatar/_bot" + botarray[0] + "_call.png";
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech1").text("All In...");
                $("#botspeech1").show().delay(5000).fadeOut();
                document.getElementById("bbet1").style.background = "red";
                }
                if (n == 2)
                {
-                document.getElementById("avatar2").src = "icons/_bot2_call.png";
+               var avatarname = "avatar" + botarray[1];
+               var avatarimage = "avatar/_bot" + botarray[1] + "_call.png";
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech2").text("All In...");
                $("#botspeech2").show().delay(5000).fadeOut();
                document.getElementById("bbet2").style.background = "red";
                }
                if (n == 3)
                {
-               document.getElementById("avatar3").src = "icons/_bot3_call.png";
+                var avatarname = "avatar" + botarray[2];
+               var avatarimage = "avatar/_bot" + botarray[2] + "_call.png";
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech3").text("All In...");
                $("#botspeech3").show().delay(5000).fadeOut();
                document.getElementById("bbet3").style.background = "red";
                }
                if (n == 4)
                {
-               document.getElementById("avatar4").src = "icons/_bot4_call.png";
+               var avatarname = "avatar" + botarray[3];
+               var avatarimage = "avatar/_bot" + botarray[3] + "_call.png";
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech4").text("All In...");
                $("#botspeech4").show().delay(5000).fadeOut();
                document.getElementById("bbet4").style.background = "red";
                }
                if (n == 5)
                {
-                document.getElementById("avatar5").src = "icons/_bot5_call.png";
+               var avatarname = "avatar" + botarray[4];
+               var avatarimage = "avatar/_bot" + botarray[4] + "_call.png";
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech5").text("All In...");
                $("#botspeech5").show().delay(5000).fadeOut();
                document.getElementById("bbet5").style.background = "red";
                }
                if (n == 6)
                {
-               document.getElementById("avatar6").src = "icons/_bot6_call.png";
+               var avatarname = "avatar" + botarray[5];
+               var avatarimage = "avatar/_bot" + botarray[5] + "_call.png";
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech6").text("All In...");
                $("#botspeech6").show().delay(5000).fadeOut();
                document.getElementById("bbet6").style.background = "red";
                }
                if (n == 7)
                {
-               document.getElementById("avatar7").src = "icons/_bot7_call.png";
+               var avatarname = "avatar" + botarray[6];
+               var avatarimage = "avatar/_bot" + botarray[6] + "_call.png";
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech7").text("All In...");
                $("#botspeech7").show().delay(5000).fadeOut();
                document.getElementById("bbet7").style.background = "red";
                }
                if (n == 8)
                {
-               document.getElementById("avatar8").src = "icons/_bot8_call.png";
+               var avatarname = "avatar" + botarray[7];
+               var avatarimage = "avatar/_bot" + botarray[7] + "_call.png";
+               document.getElementById(avatarname).src = avatarimage;
                $("#botspeech8").text("All In...");
                $("#botspeech8").show().delay(5000).fadeOut();
                document.getElementById("bbet8").style.background = "red"; 
