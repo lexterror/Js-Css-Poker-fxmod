@@ -134,6 +134,7 @@ function gui_hilite_player (hilite_color, name_color, seat, firedup) {
   var chipsdiv = internal_get_a_class_named(seatloc, 'name-chips');
   //  var chipsdiv = seatloc.getElementById('name-chips');
   var namediv = internal_get_a_class_named(chipsdiv, 'player-name');
+  var winnerseat = 'avatar' + seat;
 
   if (name_color === "") {
     namediv.style.color = chipsdiv.style.color;
@@ -143,10 +144,27 @@ function gui_hilite_player (hilite_color, name_color, seat, firedup) {
   if (hilite_color === "") {
     namediv.style.backgroundColor = chipsdiv.style.backgroundColor;
     chipsdiv.style.background = firedup;
+
   } else {
     namediv.style.backgroundColor = hilite_color;
     chipsdiv.style.background = firedup;
   }
+  if (seat == 1 && hilite_color == 'red')
+  document.getElementById("avatar1").src = "icons/_bot1_winner.png";
+  if (seat == 2 && hilite_color == 'red')
+  document.getElementById("avatar2").src = "icons/_bot2_winner.png";
+  if (seat == 3 && hilite_color == 'red')
+  document.getElementById("avatar3").src = "icons/_bot3_winner.png";
+  if (seat == 4 && hilite_color == 'red')
+  document.getElementById("avatar4").src = "icons/_bot4_winner.png";
+  if (seat == 5 && hilite_color == 'red')
+  document.getElementById("avatar5").src = "icons/_bot5_winner.png";
+  if (seat == 6 && hilite_color == 'red')
+  document.getElementById("avatar6").src = "icons/_bot6_winner.png";
+  if (seat == 7 && hilite_color == 'red')
+  document.getElementById("avatar7").src = "icons/_bot7_winner.png";
+  if (seat == 8 && hilite_color == 'red')
+  document.getElementById("avatar8").src = "icons/_bot8_winner.png";
 }
 
 function gui_set_bankroll (amount, seat) {
