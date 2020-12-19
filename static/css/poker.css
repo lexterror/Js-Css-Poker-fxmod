@@ -1,6 +1,10 @@
 html {
 
 }
+.card {
+     -webkit-filter: drop-shadow(0px 0px 1px #000);
+     filter: drop-shadow(0px 0px 1px #000);
+}
 
 .avatar {
     bottom: 0px;
@@ -9,6 +13,11 @@ html {
     width: 48px;
     height: 48px;
     position: absolute;
+}
+
+.avatar img {
+    width: 48px;
+    height: 48px;    
 }
 .speech-bubble {
     background-color: deeppink;
@@ -357,7 +366,7 @@ html {
     background-size: 100%;
     border-radius: 4px;
     height: 55px;
-    width: 38px;
+    width: 40px;
 }
 
 #flop2 {
@@ -365,7 +374,7 @@ html {
     background-size: 100%;
     border-radius: 4px;
     height: 55px;
-    width: 38px;
+    width: 40px;
 }
 
 #flop3 {
@@ -373,7 +382,7 @@ html {
     background-size: 100%;
     border-radius: 4px;
     height: 55px;
-    width: 38px;
+    width: 40px;
 }
 
 #turn {
@@ -381,7 +390,7 @@ html {
     background-size: 100%;
     border-radius: 4px;
     height: 55px;
-    width: 38px;
+    width: 40px;
 }
 
 #river {
@@ -389,7 +398,7 @@ html {
     background-size: 100%;
     border-radius: 4px;
     height: 55px;
-    width: 38px;
+    width: 40px;
 }
 
 #burn1 {
