@@ -2910,8 +2910,8 @@ function multiplies1000(toCheck) {
   return xxx;
   
 }
-var randomtop = 220;
-var randomleft = 190;
+var randomtop = 280;
+var randomleft = 354;
 var potposition = 0;
 var graphicpot = 0;
 function get_pot_size () {
