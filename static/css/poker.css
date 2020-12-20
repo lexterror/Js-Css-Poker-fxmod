@@ -151,7 +151,7 @@ html {
 
 
 #hplayer1 {
-    left: -6px;
+    left: 5px;
     position: absolute;
     transform: rotate(0deg);
     background-image: url('../images/cardback.png');
@@ -163,7 +163,7 @@ html {
 }
 
 #hplayer2 {
-    left: 50px;
+    left: 40px;
     position: absolute;
     transform: rotate(0deg);
     background-image: url('../images/cardback.png');
@@ -175,27 +175,27 @@ html {
 }
 
 #bplayer1 {
-    left: 0px;
+    left: -15px;
     position: absolute;
-    transform: rotate(-4deg);
+    transform: rotate(0deg);
     background-image: url('../images/cardback.png');
     background-size: 100%;
     border-radius: 4px;
-    height: 36px;
-    width: 25px;
+    height:75px;
+    width: 54px;
     top: 25px;
 }
 
 #bplayer2 {
     left: 12px;
     position: absolute;
-    transform: rotate(4deg);
+    transform: rotate(0deg);
     background-image: url('../images/cardback.png');
     background-size: 100%;
     border-radius: 4px;
-    height: 36px;
-    width: 25px;
-       top: 25px;
+    height:75px;
+    width: 54px;
+    top: 25px;
 }
 
 #bbet1, #bbet2, #bbet3, #bbet4, #bbet5, #bbet6, #bbet7, #bbet8, #bbet9 {
