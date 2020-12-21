@@ -163,7 +163,7 @@ html {
 }
 
 #hplayer2 {
-    left: 40px;
+    left: 46px;
     position: absolute;
     transform: rotate(0deg);
     background-image: url('../images/cardback.png');
@@ -187,7 +187,7 @@ html {
 }
 
 #bplayer2 {
-    left: 12px;
+    left: 26px;
     position: absolute;
     transform: rotate(0deg);
     background-image: url('../images/cardback.png');
