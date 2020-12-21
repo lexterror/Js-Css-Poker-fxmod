@@ -683,7 +683,7 @@ function main () {
       var message = "<b>Current raise: " +
                     current_bet_amount +
                     "</b>&nbsp;&nbsp;You need <font color=" + hi_lite_color +
-                    " style='font-size:14px'><b>" + to_call +
+                    " style=''><b>" + to_call +
                     "</b></font> more to call.&nbsp;&nbsp;";
       gui_write_game_response(message);
       write_player(0, 1, 0);
