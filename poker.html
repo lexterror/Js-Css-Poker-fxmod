@@ -69,12 +69,13 @@ body, html {
     border-radius: 0px;
     float: left;
     margin-left: 1px;
+    margin-top: 24px;
 
 }
 #cheatsheet {
     top: 520px;
     width: 338px;
-    height: 127px;
+    height: 151px;
     background-image: url(static/images/carbon.png);
     background-repeat: repeat;
     border-radius: 3px;
@@ -88,7 +89,15 @@ body, html {
     right: 0;
     margin-bottom: 50px;
 }
-    
+@font-face {
+font-family: 'digital';
+src: url('fonts/Auto_Digital.eot'); /* IE9 Compat Modes */
+src: url('fonts/Auto_Digital.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+url('fonts/Auto_Digital.woff2') format('woff2'), /* Super Modern Browsers */
+url('fonts/Auto_Digital.woff') format('woff'), /* Pretty Modern Browsers */
+url('fonts/Auto_Digital.ttf')  format('truetype'); /* Safari, Android, iOS */
+font-size: 100%;
+}    
 @font-face {
 font-family: 'western';
 src: url('fonts/western.eot'); /* IE9 Compat Modes */
@@ -151,8 +160,8 @@ function shufflebots(array) {
 shufflebots(botarray);
 
 </script>
-<div style="z-index:9999999;width:100%;height:24px;position:fixed;background: #000;bottom:0;margin: 0 auto;">
-<progress id="myprogress" max="100" value="0" style="top:5px;left:0;right:0;width:650px;height:14px;z-index:9999999;margin:0 auto;position:absolute;"></progress>
+<div style="z-index:9999999;width:100%;height:24px;position:fixed;background: #000;bottom:0;margin: 0 auto;display:none;">
+<progress id="myprogress" max="100" value="0" style="top:5px;left:0;right:0;width:650px;height:14px;z-index:9999999;margin:0 auto;position:absolute;display:none;"></progress>
 </div>
     <div id="poker_table" class="poker-table" data-uid="">
      
@@ -551,6 +560,10 @@ function display_allbot8pokerchips() {
 
  
     <div id="cheatsheet">
+    
+<div id="tik" style="max-width: 338px;margin: 0 auto;left: 0; right: 0;height:24px; background:#666;overflow-x: hidden;position: absolute;">
+<div id="game-response2" style="overflow:hidden;margin-left: 20px; margin-right: 20px;border-radius:0 0 15px 15px;font-family: digital !important;max-width:338px;left: 0; right: 0;height:24px;color:#aaa;top:0;vertical-align:middle;margin:0 auto; text-align: center;font-size: 16px !important; line-height: 18px;white-space:nowrap;overflow-x:hidden;text-overflow:ellipsis;z-index: 9999999;text-decoration: none !important;padding-left: 20px; padding-right: 20px;"></div></div>
+
       <div id="mainsettings">
     <div id="action-options" style="">
         <div id="fold-button" class="action-button"></div>
@@ -600,7 +613,23 @@ function display_allbot8pokerchips() {
 
     
 
-<div id="game-response2" style="width:100%;height:24px;background:#111;color:#fff;position: fixed;top:0;vertical-align:middle;margin:0 auto; text-align: center;font-size: 16px; line-height: 24px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;z-index: 9999999;"></div>
+
+
+   <style>
+
+      #game-response2 {
+      
+        width: 338px;
+        margin: 0 auto;
+        white-space: nowrap;
+        overflow: hidden;
+        box-sizing: border-box;
+        position: relative;
+      }
+
+    </style>
+
+
 
 <audio id="casino" loop>
   <source src="casino.ogg" type="audio/ogg">
