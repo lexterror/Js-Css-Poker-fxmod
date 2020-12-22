@@ -332,8 +332,11 @@ html {
 
 #board {
     left: 200px;
+    right: 200px;
     position: absolute;
     top:  160px;
+    perspective: 400px;
+    margin: 0 auto;
 }
 
 #pot {
@@ -360,6 +363,7 @@ html {
     top: -10px;
     width: 34px;
     box-shadow: 0 0 5px #000;
+    transform: rotateX(20deg);
 }
 
 #flop1 {
