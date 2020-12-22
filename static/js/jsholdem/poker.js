@@ -570,9 +570,9 @@ function main () {
   } else {
     players[current_bettor_index].status = "";
     if (current_bettor_index == 0) {
-      var call_button_text = "<u>C</u>all";
       var fold_button_text = "<u>F</u>old";
       var to_call = current_bet_amount - players[0].subtotal_bet;
+      var call_button_text = "<u>C</u>all" + " $" + to_call;
       if (to_call > players[0].bankroll) {
         to_call = players[0].bankroll;
       }
@@ -686,6 +686,7 @@ function main () {
                     " style=''><b>" + to_call +
                     "</b></font> more to call.&nbsp;&nbsp;";
       gui_write_game_response(message);
+      
       write_player(0, 1, 0);
       return;
     } else {
