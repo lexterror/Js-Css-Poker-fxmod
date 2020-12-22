@@ -69,13 +69,13 @@ body, html {
     border-radius: 0px;
     float: left;
     margin-left: 1px;
-    margin-top: 24px;
+    margin-top: 0px;
 
 }
 #cheatsheet {
     top: 520px;
     width: 338px;
-    height: 151px;
+    height: 127px;
     background-image: url(static/images/carbon.png);
     background-repeat: repeat;
     border-radius: 3px;
@@ -561,8 +561,8 @@ function display_allbot8pokerchips() {
  
     <div id="cheatsheet">
     
-<div id="tik" style="max-width: 338px;margin: 0 auto;left: 0; right: 0;height:24px; background:#666;overflow-x: hidden;position: absolute;">
-<div id="game-response2" style="overflow:hidden;margin-left: 20px; margin-right: 20px;border-radius:0 0 15px 15px;font-family: digital !important;max-width:338px;left: 0; right: 0;height:24px;color:#aaa;top:0;vertical-align:middle;margin:0 auto; text-align: center;font-size: 16px !important; line-height: 18px;white-space:nowrap;overflow-x:hidden;text-overflow:ellipsis;z-index: 9999999;text-decoration: none !important;padding-left: 20px; padding-right: 20px;"></div></div>
+<div id="tik"  style="max-width: 338px;margin: 0 auto;left: 0; right: 0;height:24px; background-image: url('static/images/buttonlcd.png');position: absolute;display:none;">
+<div id="game-response2" class="textVerticalScroll" style="margin-left: 20px; margin-right: 20px;border-radius:0 0 15px 15px;font-family: digital !important;max-width:338px;left: 0; right: 0;height:24px;color:blue;top:0;vertical-align:middle;margin:0 auto; text-align: center;font-size: 16px !important; line-height: 18px;z-index: 9999999;text-decoration: none !important;padding-left: 20px; padding-right: 20px;"></div></div>
 
       <div id="mainsettings">
     <div id="action-options" style="">
@@ -618,16 +618,19 @@ function display_allbot8pokerchips() {
    <style>
 
       #game-response2 {
-      
+     
         width: 338px;
         margin: 0 auto;
-        white-space: nowrap;
-        overflow: hidden;
         box-sizing: border-box;
         position: relative;
       }
 
+
+      
     </style>
+
+    
+    
 
 
 
@@ -897,4 +900,5 @@ currenttable = 0;
 setLocalStorage("currenttable", currenttable);
 }
 </script>
+ 
 </html>
