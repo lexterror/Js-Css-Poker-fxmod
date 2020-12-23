@@ -334,7 +334,7 @@ html {
     left: 200px;
     right: 200px;
     position: absolute;
-    top:  160px;
+    top:  200px;
     perspective: 400px;
     margin: 0 auto;
 }
@@ -347,7 +347,7 @@ html {
     right: 0;
     position: absolute;
     text-align: center;
-    top: 230px;
+    top: 165px;
     margin: 0 auto;
     background: #000;
     width: 180px;
