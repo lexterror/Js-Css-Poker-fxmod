@@ -588,24 +588,24 @@ function internal_get_into_the_mode (mode) {
   var color;
   var button_text;
   if (mode == "dark") {
-    color = 'linear-gradient(#999, #999, #999)';
+    color = 'rgba(0, 0, 0, 0.2)';
     button_text = 'Darker';
   } else if (mode == "darker") {
-    color = 'linear-gradient(#666, #666, #666)';
+    color = 'rgba(0, 0, 0, 0.5)';
     button_text = 'High contrast';
   } else if (mode == "night") {
-    color = 'linear-gradient(#000, #000, #000)';
+    color = 'rgba(0, 0, 0, 0.8)';
     button_text = 'Light mode';
     gui_set_game_response_font_color('white');
     gui_set_production_code_font_color('white');
     } else {
-    color = 'linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%), linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%)';    
+    color = 'rgba(0, 0, 0, 0)';    
     
     button_text = 'Dark mode';
     gui_set_game_response_font_color('black');
     gui_set_production_code_font_color('black');
 }
-  document.body.style.backgroundImage = color;
+  document.body.style.background = color;
   mode_button.innerHTML = button_text;
 }
 
