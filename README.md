@@ -9,12 +9,12 @@ A live demo of my mod is available at: http://electrolex.myartsonline.com/poker/
 
 Additional Information: 
 
--The "Avatars" were created with "facegen"
--Poker Tables: I created  these with "inkscape"
--Playing Cards: I created these with "inkscape/gimp/xnview"
--Wood Background 4K: I created this with "gimp"
--Poker Chips: I created these with "blender" 
--Buttons: I created these with "inkscape"
--Voices: Created with "http://www.fromtexttospeech.com/" 
--Sounds: From various free online websites
--I modified "js-css-poker" code to work with these resources and provide additional gameplay feedback.
+-The "Avatars" were created with "facegen"<br>
+-Poker Tables: I created  these with "inkscape"<br>
+-Playing Cards: I created these with "inkscape/gimp/xnview"<br>
+-Wood Background 4K: I created this with "gimp"<br>
+-Poker Chips: I created these with "blender" <br>
+-Buttons: I created these with "inkscape"<br>
+-Voices: Created with "http://www.fromtexttospeech.com/" <br>
+-Sounds: From various free online websites<br>
+-I modified "js-css-poker" code to work with these resources and provide additional gameplay feedback.<br>
