@@ -5,7 +5,7 @@ Javascript Poker Game
 
 This project is a mod. The original author/program can be found here: https://sourceforge.net/projects/js-css-poker/
 
-A live demo of my mod is available at: http://electrolex.myartsonline.com/poker/poker.html
+A live demo of my mod is available at: https://js-css-poker-fxmod.sourceforge.io/poker.html
 
 Additional Information: 
 
